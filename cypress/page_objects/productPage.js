@@ -1,4 +1,7 @@
+const Utils = require("../helpers/utils")
+
 const _productList = '[class="product_list grid row"]'
+const _productClick = '[src="https://prestashop.ryviushop.com/7-home_default/blouse.jpg"]'
 
 class ProductPage
 {
@@ -9,13 +12,8 @@ class ProductPage
             cy.wrap($element).should('contain', 'blouse').then(() => 
             {
               cy.log($element.text())
-
-              if (index === 0) 
-              {
-                cy.wrap($element).click()
-              }
-
             })
+            Utils.clickElement(_productClick)
           })
     }
 

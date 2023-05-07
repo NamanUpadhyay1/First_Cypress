@@ -12,7 +12,8 @@ class Utils
 
     static urlAndAssert(url)
     {
-        cy.visit(url, { timeout: 10000, retryOnStatusCodeFailure: true, retryOnNetworkFailure: true });
+        cy.visit(url, { timeout: 30000, retryOnStatusCodeFailure: true, retryOnNetworkFailure: true });
+        cy.wait(5000)
         cy.url().should('include', url)
     }
 }
